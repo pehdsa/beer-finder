@@ -4,6 +4,8 @@ use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
 use App\Livewire\Settings\TwoFactor;
+use App\Livewire\Beers\Index as BeersIndex;
+
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 
@@ -32,4 +34,7 @@ Route::middleware(['auth'])->group(function () {
             ),
         )
         ->name('two-factor.show');
+
+    Route::get('beers', BeersIndex::class)->name('beers.index');
+    Route::get('beers/create', BeersIndex::class)->name('beers.create');
 });
